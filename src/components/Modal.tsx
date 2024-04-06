@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from 'react';
 import Map from "./Map"
 import BlockLayout from "./BlockLayout"
 import gsap from 'gsap';
+import {Link} from "react-router-dom";
 interface Props {
     isOpen: boolean;
     onClose: (event: React.MouseEvent | KeyboardEvent) => void;
@@ -45,7 +46,14 @@ const Modal:React.FC<Props> = ({ isOpen, onClose }) =>{
             <div className="flex justify-center items-center h-full sm:pt-[500px] md:pt-0 xl:pt-0 lg:pt-0 xxl:pt-0 w-full">
                 <div className='grid sm:place-items-center md:place-items-start xl:place-items-start lg:place-items-start xxl:place-items-start sm:grid-cols-1 md:grid-cols-3 xxl:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4'>
                     <div className="flex flex-col sm:w-[90vw] md:w-[60vw] xxl:w-[60vw] lg:w-[60vw] xl:w-[60vw] h-full justify-center sm:col-span-1 md:col-span-2 xxl:col-span-2 xl:col-span-2 lg:col-span-2">
-                    <input placeholder="Find your desired location..." className="outline-0 p-3"/>
+                    <div className="w-full relative">
+                        <input placeholder="Find your desired location..." className="outline-0 p-3 w-full"/>
+                        <Link to="/">
+                            <button className="absolute right-0 top-0 bg-black border-white border-2 p-3 duration-[0.1s] hover:border-blue-400 active:border-blue-400">
+                                <img src='/add-icon.svg' alt="add-icon" />
+                            </button>
+                        </Link>
+                    </div>
                         <div className="w-full h-[400px]">
                         <Map/>
                         </div>
