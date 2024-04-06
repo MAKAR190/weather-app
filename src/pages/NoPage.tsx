@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 
-const NoPage = () => {
+const NoPage = ({message}: {message?:string;}) => {
     const imageRef = useRef(null);
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const NoPage = () => {
         <div className="App">
             <div className="flex flex-col w-[99%] h-screen justify-center items-center">
                 <img ref={imageRef}  src="/sad-icon.png" alt="sad-icon" />
-                <h1 className="font-bold text-white text-center text-9xl font-sans-['Merriweather']">404</h1>
+                <h1 className="font-bold text-white text-center text-7xl font-sans-['Merriweather']">{message || "404"}</h1>
                 <Link to="/">
                   <button className="my-10 text-white bg-black border-blue-400 border-2 rounded-2xl px-5 py-3 duration-[0.1s] hover:border-white">Home</button>
                 </Link>

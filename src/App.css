@@ -1,6 +1,8 @@
-.App {
+#root {
     background: linear-gradient(167.44deg, #08244F 0%, #134CB5 47.38%, #0B42AB 100%);
-    padding-bottom: 10px;
+}
+.App{
+    position: relative;
 }
 
 ::-webkit-scrollbar {

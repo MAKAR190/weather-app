@@ -4,11 +4,9 @@ const Loader = () => {
     return (
         <Radio
             visible={true}
-            height="10"
-            width="10"
             colors={["#4169E1", "#4169E1", "#4169E1"]}
             ariaLabel="radio-loading"
-            wrapperClass="w-screen h-screen flex justify-center items-center bg-black bg-opacity-50"
+            wrapperClass="w-full fixed h-full flex top-0 flex justify-center items-center bg-[#4169E1] bg-opacity-50"
         />
     )
 }

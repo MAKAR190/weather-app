@@ -1,5 +1,5 @@
 import { ToastOptions } from 'react-toastify';
-export const reverseGeocode = async (latitude:number, longitude:number) => {
+export const reverseGeocode = async (latitude:number | undefined, longitude: number | undefined) => {
     const apiKey = process.env.REACT_APP_MAPS_API_KEY;
     const response = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`
@@ -17,7 +17,7 @@ export const convertToSlug = (text:string) => {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)+/g, '');
 };
-export const fetchCoordinatesFromSlug = async (slug: string) => {
+export const fetchCoordinatesFromSlug = async (slug: string,  reportError?: (bool:boolean) => void) => {
     const locationName = slug
         .split('-')
         .map(part => part.charAt(0).toUpperCase() + part.slice(1))
@@ -31,7 +31,7 @@ export const fetchCoordinatesFromSlug = async (slug: string) => {
         const data = await response.json();
         if (data.results && data.results.length > 0) {
             const { lat, lng } = data.results[0].geometry.location;
-            return { latitude: lat, longitude: lng };
+            return { lat, lng  };
         } else {
             throw new Error('Location not found');
         }
