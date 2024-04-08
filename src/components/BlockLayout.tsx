@@ -6,7 +6,7 @@ interface Props {
 
 const BLockLayout: React.FC<Props> = ({children,className})=>{
 return (
-    <div className={`isolate shadow-lg ring-1 ring-black/5 rounded-2xl bg-white/10 bg-opacity-45 ${className}`}>
+    <div className={`isolate shadow-lg ring-1 ring-black/5 rounded-2xl bg-white/5 bg-opacity-45 ${className}`}>
         {children}
     </div>
  )
