@@ -23,7 +23,7 @@ const Header:React.FC<Props> = ({toggleModal, place})=>{
     return (
         <>
         <header className="flex justify-between items-center w-full p-3">
-            <div onClick={toggleModal} className="flex w-[33.3%] items-center cursor-pointer">
+            <div onClick={toggleModal} className="flex sm:w-[80%] xxl:w-[33.3%] lg:w-[33.3%] xl:w-[33.3%] md:w-[33.3%] items-center cursor-pointer">
                 <img src="/location-icon.svg" alt="location-icon" className="mx-2"/>
                 <h1 className="text-white text-xl font-medium font-['Bakbak_One']">{place}</h1>
                 <img src="/arrow-icon.svg" alt="arrow-icon"  className="pt-1.5 mx-3"/>
