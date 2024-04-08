@@ -110,7 +110,7 @@ const Modal:React.FC<Props> = ({ isOpen, onClose, center, locations }) =>{
            <div onClick={(e)=>onClose(e)} className="absolute right-2 top-5 cursor-pointer">
                <img src="/cross.svg" alt="cross" />
            </div>
-            <div className="flex justify-center items-center h-full sm:pt-[50px] md:pt-0 xl:pt-0 lg:pt-0 xxl:pt-0 w-full">
+            <div className="flex justify-center items-center h-full sm:pt-[150px] md:pt-0 xl:pt-0 lg:pt-0 xxl:pt-0 w-full">
                 <div className='grid sm:place-items-center md:place-items-start xl:place-items-start lg:place-items-start xxl:place-items-start sm:grid-cols-1 md:grid-cols-3 xxl:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4'>
                     <div className="flex flex-col sm:w-[90vw] md:w-[60vw] xxl:w-[60vw] lg:w-[60vw] xl:w-[60vw] h-full justify-center sm:col-span-1 md:col-span-2 xxl:col-span-2 xl:col-span-2 lg:col-span-2">
                     <div className="w-full relative">

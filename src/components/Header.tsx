@@ -63,7 +63,7 @@ const Header:React.FC<Props> = ({toggleModal, place})=>{
             </div>
         </header>
             <ul className="items-start sm:flex justify-start w-full min-w-[300px] text-sm font-medium text-gray-900 md:hidden lg:hidden xl:hidden xxl:hidden bg-blue-900">
-                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r dark:border-gray-600">
+                <li className="w-full border-b border-gray-200 sm:border-b-0 sm:border-r">
                     <div className="flex items-center ps-3">
                         <input
                             id="horizontal-list-radio-fahrenheit-sm"
@@ -74,10 +74,10 @@ const Header:React.FC<Props> = ({toggleModal, place})=>{
                             checked={temperatureUnit === 'fahrenheit'}
                             onChange={toggleTemperatureUnit}
                         />
-                        <label htmlFor="horizontal-list-radio-fahrenheit-sm" className="w-full whitespace-nowrap py-3 ms-2 text-sm font-medium text-gray-900">Fahrenheit</label>
+                        <label htmlFor="horizontal-list-radio-fahrenheit-sm" className="w-full whitespace-nowrap py-3 ms-2 text-sm font-medium text-gray-50">Fahrenheit</label>
                     </div>
                 </li>
-                <li className="w-full dark:border-gray-600">
+                <li className="w-full">
                     <div className="flex justify-center items-center w-full ps-3">
                         <input
                             id="horizontal-list-radio-celsius-sm"
@@ -88,7 +88,7 @@ const Header:React.FC<Props> = ({toggleModal, place})=>{
                             checked={temperatureUnit === 'celsius'}
                             onChange={toggleTemperatureUnit}
                         />
-                        <label htmlFor="horizontal-list-radio-celsius-sm" className="w-full whitespace-nowrap py-3 ms-2  text-sm font-medium text-gray-900">Celsius</label>
+                        <label htmlFor="horizontal-list-radio-celsius-sm" className="w-full whitespace-nowrap py-3 ms-2  text-sm font-medium text-gray-50">Celsius</label>
                     </div>
                 </li>
             </ul>
