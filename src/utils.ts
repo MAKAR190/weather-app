@@ -41,6 +41,41 @@ export const fetchCoordinatesFromSlug = async (slug: string,  reportError?: (boo
     }
 };
 
+export function unixTimeToHour(unixTime:number) {
+    const date = new Date(unixTime * 1000);
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+
+    return `${hours}:${minutes}`;
+}
+export function unixTimeToDay(unixTime:number) {
+    const date = new Date(unixTime * 1000);
+
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+    const dayOfWeek = weekdays[date.getDay()];
+
+    return dayOfWeek;
+}
+
+export function formatPeriod(startUnixTime:number) {
+    const startDate = new Date(startUnixTime * 1000);
+    const endDate = new Date((startUnixTime + 86400) * 1000);
+
+    const startMonth = startDate.toLocaleString('default', { month: 'short' });
+    const endMonth = endDate.toLocaleString('default', { month: 'short' });
+
+    const startDay = startDate.getDate();
+    const endDay = endDate.getDate();
+
+    if (startMonth === endMonth) {
+        return `${startMonth}, ${startDay}-${endDay}`;
+    } else {
+        return `${startMonth} ${startDay} - ${endMonth} ${endDay}`;
+    }
+}
+
+
 export const toastOptions: ToastOptions = {
     position: 'bottom-right',
     autoClose: 5000,

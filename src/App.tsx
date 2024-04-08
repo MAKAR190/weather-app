@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import {Loader} from "./components"
 import { ToastContainer } from 'react-toastify';
 import { Routes, Route, Navigate} from "react-router-dom";
 import {Location, NoPage} from "./pages"
 import {convertToSlug, reverseGeocode} from "./utils";
-
+import {TemperatureProvider} from './contexts/TemperatureContext';
 interface LocationObj {
     latitude: number;
     longitude: number;
@@ -19,6 +18,7 @@ function App() {
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
+        if(!userLocation && window.location.pathname === "/") {
             navigator.geolocation.getCurrentPosition(
                 async (position) => {
                     const {latitude, longitude} = position.coords;
@@ -33,10 +33,13 @@ function App() {
                     }
                 },
             );
+        } else {
+            setLoading(false);
+        }
     }, []);
 
     return (
-        <>
+        <TemperatureProvider>
             {loading ? (
                 <Loader />
             ) : (
@@ -47,7 +50,7 @@ function App() {
                 </Routes>
             )}
             <ToastContainer />
-    </>
+    </TemperatureProvider>
     )
 }
 
