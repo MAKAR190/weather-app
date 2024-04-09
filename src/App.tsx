@@ -52,7 +52,7 @@ function App() {
             ) : (
                 <Routes>
                     {!geolocationAllowed &&
-                        <Route path="/" element={<NoPage message="Please, allow your current geolocation!" />}   />
+                        <Route path="/" element={<NoPage message="Please, allow and turn on your current geolocation!" />}   />
                     }
                     <Route path="/" element={<Navigate to={`/location/${userLocation?.locationSlug}`} />} />
                     <Route path="location/:location" element={<Location locationName={userLocation?.locationName} updateMainLocation={setUserLocation}  setLoading={setLoading} center={{lng:userLocation?.longitude, lat:userLocation?.latitude}} />} />
